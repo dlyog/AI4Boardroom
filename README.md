@@ -13,7 +13,6 @@ A simple Python Flask application that allows users to upload photos of expense 
 ## Requirements
 
 - **Python 3.x**
-
 - **Packages**:
   - Flask
   - pytesseract
