@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
 COPY . .
 
 # Install Python dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements1.txt
 
 # Expose Cloud Run default port
 EXPOSE 8080
