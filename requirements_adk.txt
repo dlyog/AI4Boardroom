@@ -1,0 +1,11 @@
+Flask
+pytesseract
+openai
+python-dotenv
+Pillow
+requests
+PyPDF2
+SpeechRecognition
+python-dotenv
+google-adk
+google-generativeai

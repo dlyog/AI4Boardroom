@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tax Deductibility Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            color: white;
+        }
+
+        .action-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .action-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            place-items: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+
+        .result-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            place-items: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 600px;
+            color: #1a1a1a;
+        }
+
+        .advice-content {
+            margin: 1.5rem 0;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .loading-message {
+            position: fixed;
+            inset: 0;
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            place-items: center;
+            z-index: 1001;
+        }
+
+        /* Camera Modal Styles */
+        .camera-modal {
+            position: relative;
+            background: #000;
+            width: 100%;
+            max-width: 500px;
+            aspect-ratio: 3/4;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .camera-feed, #photoCanvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .camera-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .camera-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .camera-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .capture-btn {
+            width: 70px;
+            height: 70px;
+            background: white;
+            color: #4f46e5;
+        }
+
+        .retake-buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .retake-buttons .btn {
+            flex: 1;
+            max-width: 150px;
+            background: white;
+            color: #4f46e5;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .retake-buttons .btn:hover {
+            opacity: 0.9;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mt-8">
+        <div class="text-center">
+            <h1 class="text-2xl font-bold mb-4">Tax Deductibility Assistant</h1>
+            <p>Upload or scan your receipt for professional tax advice</p>
+        </div>
+
+        <button class="action-button" id="openCameraButton">
+            <i class="fas fa-camera mr-2"></i>
+            <span>Scan Receipt</span>
+        </button>
+
+        <button class="action-button" id="uploadButton">
+            <i class="fas fa-upload mr-2"></i>
+            <span>Upload Receipt</span>
+        </button>
+
+        <input type="file" id="fileInput" accept="image/*" class="hidden">
+    </div>
+
+    <!-- Camera Modal -->
+    <div id="cameraModal" class="modal">
+        <div class="camera-modal">
+            <video id="cameraFeed" autoplay playsinline></video>
+            <canvas id="photoCanvas" class="hidden"></canvas>
+            <div class="camera-controls">
+                <button id="switchCamera" class="camera-btn" title="Switch Camera">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+                <button id="capturePhoto" class="camera-btn capture-btn" title="Capture Photo">
+                    <i class="fas fa-camera"></i>
+                </button>
+                <button id="closeCameraModal" class="camera-btn" title="Close Camera">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="retakeButtons" class="retake-buttons hidden">
+                <button id="retakePhoto" class="btn">Retake</button>
+                <button id="usePhoto" class="btn">Use Photo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="result-modal">
+        <div class="modal-content">
+            <h2 class="text-2xl font-bold mb-2">Tax Professional Analysis</h2>
+            <div id="adviceContent" class="advice-content text-gray-700"></div>
+            <button id="closeResultModal" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Message -->
+    <div id="loadingMessage" class="loading-message">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+            <p class="text-gray-700">Analyzing your receipt...</p>
+        </div>
+    </div>
+
+    <script>
+        // Variables
+        let stream = null;
+        let facingMode = 'environment';
+
+        // DOM Elements
+        const elements = {
+            openCameraButton: document.getElementById('openCameraButton'),
+            uploadButton: document.getElementById('uploadButton'),
+            fileInput: document.getElementById('fileInput'),
+            cameraModal: document.getElementById('cameraModal'),
+            cameraFeed: document.getElementById('cameraFeed'),
+            photoCanvas: document.getElementById('photoCanvas'),
+            captureButton: document.getElementById('capturePhoto'),
+            switchCameraButton: document.getElementById('switchCamera'),
+            closeCameraButton: document.getElementById('closeCameraModal'),
+            retakeButtons: document.getElementById('retakeButtons'),
+            retakeButton: document.getElementById('retakePhoto'),
+            usePhotoButton: document.getElementById('usePhoto'),
+            resultModal: document.getElementById('resultModal'),
+            closeResultModalButton: document.getElementById('closeResultModal'),
+            loadingMessage: document.getElementById('loadingMessage')
+        };
+
+        // Functions
+        function showModal(modal) {
+            modal.style.display = 'grid';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal(modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        async function startCamera() {
+            try {
+                if (stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                }
+
+                stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode },
+                    audio: false
+                });
+
+                elements.cameraFeed.srcObject = stream;
+                showModal(elements.cameraModal);
+                elements.cameraFeed.classList.remove('hidden');
+                elements.photoCanvas.classList.add('hidden');
+                elements.retakeButtons.classList.add('hidden');
+                elements.captureButton.style.display = 'block';
+            } catch (err) {
+                console.error('Error accessing camera:', err);
+                alert('Unable to access camera. Please ensure camera permissions are granted.');
+            }
+        }
+
+        function stopCamera() {
+            if (stream) {
+                stream.getTracks().forEach(track => track.stop());
+                stream = null;
+            }
+            hideModal(elements.cameraModal);
+        }
+
+        function capturePhoto() {
+            const context = elements.photoCanvas.getContext('2d');
+            elements.photoCanvas.width = elements.cameraFeed.videoWidth;
+            elements.photoCanvas.height = elements.cameraFeed.videoHeight;
+            context.drawImage(elements.cameraFeed, 0, 0, elements.photoCanvas.width, elements.photoCanvas.height);
+
+            elements.cameraFeed.classList.add('hidden');
+            elements.photoCanvas.classList.remove('hidden');
+            elements.retakeButtons.classList.remove('hidden');
+            elements.captureButton.style.display = 'none';
+        }
+
+        function usePhoto() {
+            elements.photoCanvas.toBlob(async (blob) => {
+                try {
+                    const file = new File([blob], 'camera-capture.jpg', { type: 'image/jpeg' });
+                    stopCamera();
+                    await handleUpload(file);
+                } catch (error) {
+                    console.error('Error in usePhoto:', error);
+                    alert('An error occurred while processing your photo.');
+                }
+            }, 'image/jpeg', 0.9);
+        }
+
+        function switchCamera() {
+            facingMode = facingMode === 'environment' ? 'user' : 'environment';
+            startCamera();
+        }
+
+        async function handleUpload(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                elements.loadingMessage.style.display = 'grid';
+
+                const response = await fetch('/reimbursement', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                elements.loadingMessage.style.display = 'none';
+
+                if (data.status === 'success') {
+                    document.getElementById('adviceContent').textContent = data.advice;
+                    showModal(elements.resultModal);
+                } else {
+                    alert(data.message || 'An error occurred.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                elements.loadingMessage.style.display = 'none';
+                alert('An error occurred while processing your request.');
+            }
+        }
+
+        // Event Listeners
+        elements.openCameraButton.addEventListener('click', startCamera);
+        elements.captureButton.addEventListener('click', capturePhoto);
+        elements.switchCameraButton.addEventListener('click', switchCamera);
+        elements.closeCameraButton.addEventListener('click', stopCamera);
+        elements.retakeButton.addEventListener('click', () => {
+            elements.photoCanvas.classList.add('hidden');
+            elements.cameraFeed.classList.remove('hidden');
+            elements.retakeButtons.classList.add('hidden');
+            elements.captureButton.style.display = 'block';
+        });
+        elements.usePhotoButton.addEventListener('click', usePhoto);
+        elements.closeResultModalButton.addEventListener('click', () => hideModal(elements.resultModal));
+        elements.uploadButton.addEventListener('click', () => elements.fileInput.click());
+        elements.fileInput.addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                await handleUpload(file);
+                event.target.value = ''; // Reset the input
+            }
+        });
+
+        // Escape key handler
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                hideModal(elements.cameraModal);
+                hideModal(elements.resultModal);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+hey is it going to be worth investment setting up a lab by spending $10,000 for NVIDIA GPU instead of using llm API call like gemini or openai for our new Jeremy project

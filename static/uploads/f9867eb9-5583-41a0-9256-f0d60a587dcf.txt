@@ -1,0 +1,1 @@
+hey it will be will be wise to invest around $10,000 to buy Nvidia GPU in in lab for local llm processing or we should use llm API like Google cloud or Gemini

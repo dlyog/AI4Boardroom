@@ -1,0 +1,33 @@
+.
+├── apace_proxy.txt
+├── app_adk.py
+├── app.py
+├── data.json
+├── README.md
+├── repo_structure.txt
+├── requirements_adk.txt
+├── requirements.txt
+├── start.sh
+├── static
+│   ├── css
+│   │   └── style.css
+│   └── uploads
+│       ├── 31c01133-02db-4ffc-a1cf-2ced0f6a0e43.pdf
+│       ├── 4053f84c-e1d8-48d1-8028-c21600120ade.png
+│       ├── 467b2a1c-a66d-41ed-966d-121a71f54f3c.txt
+│       ├── 489edcf0-fccc-48b1-ace0-8340a8d233e6.txt
+│       ├── 4aa76d19-76d1-48f5-b131-3c739d8267f6.png
+│       ├── 6d49d52d-9202-4d7d-9731-d4d9e4792371.png
+│       ├── ac7db230-a716-49d2-b9b3-64debfdb65d8.png
+│       ├── af636962-0135-4b98-8220-e068729c198b.jpg
+│       ├── b79c8669-67b8-4f2d-b885-5b0e9f33f692.txt
+│       └── e023b72d-4407-4053-b6e0-4a956bdfc4a0.png
+├── templates
+│   ├── audit.html
+│   ├── index.html
+│   ├── login.html
+│   ├── reimbursement.html
+│   └── upload.html
+└── users.json
+
+5 directories, 26 files

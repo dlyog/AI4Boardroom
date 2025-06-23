@@ -1,0 +1,49 @@
+name: Deploy to Google Cloud Run (Self-Hosted)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, Linux, X64, gcp1]
+
+    env:
+      PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+      REGION: ${{ secrets.GCP_REGION }}
+      SERVICE_NAME: ${{ secrets.CLOUD_RUN_SERVICE }}
+      IMAGE: gcr.io/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.CLOUD_RUN_SERVICE }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Authenticate with gcloud CLI
+      run: |
+        echo '${{ secrets.GCP_SA_KEY }}' > gcp-key.json
+        gcloud auth activate-service-account --key-file=gcp-key.json
+        gcloud config set project "$PROJECT_ID"
+        gcloud auth configure-docker
+
+    - name: Prepare secrets
+      shell: bash
+      run: |
+        echo "${{ secrets.USERS_JSON }}" | base64 --wrap=0 > users.b64 || echo "${{ secrets.USERS_JSON }}" | base64 > users.b64
+
+    - name: Build Docker image
+      run: |
+        docker build \
+          --build-arg USERS_B64="$(cat users.b64)" \
+          --build-arg GOOGLE_API_KEY="${{ secrets.GOOGLE_API_KEY }}" \
+          -t "$IMAGE" .
+
+    - name: Push Docker image to Google Container Registry
+      run: docker push "$IMAGE"
+
+    - name: Deploy to Google Cloud Run
+      run: |
+        gcloud run deploy "$SERVICE_NAME" \
+          --image "$IMAGE" \
+          --platform managed \
+          --region "$REGION" \
+          --allow-unauthenticated

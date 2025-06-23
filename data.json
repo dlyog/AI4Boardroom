@@ -1,0 +1,768 @@
+[
+    {
+        "document_id": "467b2a1c-a66d-41ed-966d-121a71f54f3c",
+        "filename": "467b2a1c-a66d-41ed-966d-121a71f54f3c.txt",
+        "original_filename": "467b2a1c-a66d-41ed-966d-121a71f54f3c.txt",
+        "text": "I want to develop a large scale database application for a carrier sculpture app",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "agent_name": "CEO Agent",
+                "decision": "approve",
+                "comments": "The document provides a clear goal for the project"
+            },
+            {
+                "agent_name": "Chief Human Resource Officer",
+                "decision": "approve",
+                "comments": "This project aligns with our company's goals and vision. I am pleased to see innovative ideas being proposed. Please provide a detailed project plan"
+            }
+        ],
+        "document_type": "Idea",
+        "content_hash": "784a1395c4d560fab17f88217b56fa33d3e4c11f14299c55d1f6283490210395",
+        "agents_required": [
+            "CEO Agent",
+            "Chief Human Resource Officer"
+        ]
+    },
+    {
+        "document_id": "7600eadf-26e3-4c13-91a4-936411b4fc61",
+        "filename": "6d49d52d-9202-4d7d-9731-d4d9e4792371.png",
+        "original_filename": "walmart_bill.png",
+        "text": "WALL-MART-SUPERSTORE\n\n(888) 888 - 8888\nMANAGER TOD LINGA\n888 WALL STORE ST\nWALL ST CITY, LA 88888\nST# 2323 OP# 23432435 TEt 51 TRE =4354\nHAND TOWEL 075953630184 2.97 X\nGATORADE 068949055223 2.00 X\n\u2018T-SHIRT 036231552452 16.88 X\nPUSH PINS 088348997350 1.24%\n\u2018SUBTOTAL 23.09\nTAX 1 7.89% 2.90\nTAX 2 4.90% 1.28\nTOTAL 27.27\nCREDIT TEND 27.27\nCHANGE DUE 0.00\nACCOUNT # ee eee 9 9999\nAPPROVAL # 77W166\n\nREF # 307171075528\nTERMINAL # 5419885359\n\n# ITEMS SOLD 4\ni)\n\nTC# 1752 5627 3145 9811 0000\nGet Free Holiday Savings by Cell!\nThank You for Shopping With Us!\n\n10/17/2020 16:12\n\u2018totes CUSTOMER COPY tote \u00e9e",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "agent_name": "CFO Agent",
+                "decision": "reject",
+                "comments": "The document lacks necessary details and is not properly formatted. The sales tax rates are not clearly specified"
+            },
+            {
+                "agent_name": "Ethics Agent",
+                "decision": "reject",
+                "comments": "The document appears to be an invoice or receipt from Wall-Mart Superstore"
+            }
+        ],
+        "document_type": "Expense Report",
+        "content_hash": "47d7515de945b40bf28b7512da2e3d7822ff18bb4d0e0c37867defdb9cfe7bdd",
+        "agents_required": [
+            "CFO Agent",
+            "Ethics Agent"
+        ]
+    },
+    {
+        "document_id": "e43f483c-eb16-4cec-b327-37db909d3f17",
+        "filename": "e023b72d-4407-4053-b6e0-4a956bdfc4a0.png",
+        "original_filename": "restaurant_bill.png",
+        "text": "FISH & CHIPS RESTAURANT\n1875, HIGH HOUSE RD\nNEW HILL, NC, 27513\n\n(919)-885-3555\n\nORDER : 64 10/19/2019\nHOST : MEGAN 12:16 PM\n2 FISH & CHIPS BOWL $ 17.98\n2 DRINKS $3.98\n2 FISH SPYCY SOUP $7.96\nVISA 8888 SALE\nSUBTOTAL 3 29.92\nTAX 1.20\nTOTAL: $31.12\nTRANSACTION TYPE: SALE\nAUTHORIZATION: APPROVED\nPAYMENT CODE: 233828\nPAYMENT ID: 8211884\nCARD READER: SWIPED/CHIP\n\n+ TIPS\n\n=TOTAL: ____-___\nx\n\nCUSTOMER COPY\n\nTHANKS FOR VISITING\nFISH & CHIPS RESTAURANT",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "agent_name": "CFO Agent",
+                "decision": "approve",
+                "comments": "The document appears to be a valid sales receipt from Fish & Chips Restaurant"
+            },
+            {
+                "agent_name": "Ethics Agent",
+                "decision": "approve",
+                "comments": "The document appears to be a legitimate sales receipt from a restaurant"
+            }
+        ],
+        "document_type": "Expense Report",
+        "content_hash": "a9a7ab0fcf5f7977825ef3af954bc55bbd6930798f6443fa2296b0f6f2099208",
+        "agents_required": [
+            "CFO Agent",
+            "Ethics Agent"
+        ]
+    },
+    {
+        "document_id": "f49b942d-8e78-4f98-9491-4a0b1a318485",
+        "filename": "31c01133-02db-4ffc-a1cf-2ced0f6a0e43.pdf",
+        "original_filename": "NOIA-Update-MCP-2010029.pdf",
+        "text": "Department of Health Care Services  \nContracts Division  \n1501 Capitol Avenue, Sacramento, CA 95814 \nPhone: (916) 552- 8006  \nInternet Address: http://www.DHCS.ca.gov   NOTICE OF INTENT TO AWARD  \nDEPARTMENT OF HEALTH CARE SERVICES (DHCS)  \nContracts Division  \n1501 Capitol Avenue  \nSacramento, CA 95814 \nSeptember 2, 2022 UPDATE  \nIN CONSIDERATION OF THE RECEIPT  REGARDING  \nNOTICES OF INTENT TO APPEAL  FOR THE  \nCALIFORNIA DEPARTMENT OF HEALTH CARE SERVICES\u2019  \n \nMedi -Cal Managed Care Plans R equest for Proposal  # 20-10029  \nDHCS HEREBY ANNOUNCES AWARD STAUS\u2019 FOR THE INTENDED AWARDEES:  \nCOUNTY  INTENDED AWARDEE  STATUS  NOTICE OF \nINTENT TO  \nAPPEAL \nFILED  BY \nAlpine  Blue Cross of California Partnership Plan, Inc.  Appeal Filed  A, H \nEl Dorado  Blue Cross of California Partnership Plan, Inc.  Appeal Filed  A, H \nFresno  Blue Cross of California Partnership Plan, Inc.  Appeal Filed  A, C \nKern  Blue Cross of California Partnership Plan, Inc.  Appeal Filed  A, C, H \nKings  Blue Cross of California Partnership Plan, Inc.  Appeal Filed  A, C \nLos Angeles  Molina Healthcare of California, Inc.  Appeal Filed  C, H \nMadera  Blue Cross of California Partnership Plan, Inc.  Appeal Filed  A, C \nRiverside  Molina Healthcare of California, Inc.  Appeal Filed  A, C, H \nSan Bernardino  Molina Healthcare of California, Inc.  Appeal Filed  A, C, H  \nSanta Clara  Blue Cross of California Partnership Plan, Inc.  Appeal Filed  A, H \nSan Francisco  Blue Cross of California Partnership Plan, Inc.  No Appeal Filed   \nSan Joaquin  Health Net Community Solutions, Inc.  Appeal Filed  A \nStanislaus  Health Net Community Solutions, Inc.  Appeal Filed  A \nTulare  Health Net Community Solutions, Inc.  Appeal Filed  A, C \nSacramento  Molina Healthcare of California, Inc.  \nBlue Cross of California Partnership Plan, Inc.  Appeal Filed  \nAppeal Filed  H, C \nSan Diego  Molina Healthcare of California, Inc.  \nHealth Net Community Solutions, Inc.  Appeal Filed  \nAppeal Filed  A, C, E, H  \nAmador  Blue Cross of California Partnership Plan, Inc.  \nHealth Net Community Solutions, Inc.  No Appeal Filed  \nNo Appeal Filed   \nCalaveras  Blue Cross of California Partnership Plan, Inc.  \nHealth Net Community Solutions, Inc.  No Appeal Filed  \nNo Appeal Filed   \nInyo Blue Cross of California Partnership Plan, Inc.  \nHealth Net Community Solutions, Inc.  No Appeal Filed  \nNo Appeal Filed   \nMono  Blue Cross of California Partnership Plan, Inc.  \nHealth Net Community Solutions, Inc.  No Appeal Filed  \nNo Appeal Filed   \nTuolumne  Blue Cross of California Partnership Plan, Inc.  \nHealth Net Community Solutions, Inc.  No Appeal Filed  \nNo Appeal Filed   \n  Notice of Intent to Award Update  \nSeptember 2, 2022  \nPage 2 of 2  \n \n   \n A: Blue Shield of California Promise Health Plan  \nB: Imperial Health Plan of California, Inc.  \nC: Aetna Better Health of California, Inc.  \nD: Molina Healthcare of California, Inc.  \nE: CHG Foundation, d.b.a. Community Health Group Partnership Plan \nF: Chinese Community Health Plan  \nG: Blue Cross of California Partnership Plan, Inc.  \nH: Health Net Community Solutions, Inc.  \n \nPlease send requests for the Bidders Package via email to CDRFP8@dhcs.ca.gov . Requests for \nmaterials not included in the Bidders Package may be submitted via email to \nPRARequest@dhcs.ca.gov  or via the Public Records Act (PRA) portal.",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "agent_name": "Chief Human Resource Officer",
+                "decision": "approve",
+                "comments": "The document appears to be a standard notice of intent to award for a government contract"
+            }
+        ],
+        "document_type": "Notice of Intent to Award",
+        "content_hash": "14e2c0dc3476ec9ff280783c684000efe25295a4b020b206638a7d0264b94000",
+        "agents_required": [
+            "Chief Human Resource Officer"
+        ]
+    },
+    {
+        "document_id": "8ea8b1e8-dc76-409e-9988-56e7977cfe2b",
+        "filename": "4053f84c-e1d8-48d1-8028-c21600120ade.png",
+        "original_filename": "fast_food.png",
+        "text": "ICE Cream - Frozen Yogurt\n23223, DAVIS AVE\nAPEX, SC, 32322\n888 888 8888\n\nServing All-Natural Frozen Custard\nORDER: 37\n\n05/24/2021 19:55\nTransaction 6896571\n\n1 Regular Concrete $5.50\n\nVanilla Custard $0.75\n\nWalnuts $0.49\n\nPecans $0.39\n\nCaramel $0.25\n\n2 Special Oreo Concrete $ 13.00\n\nCaramel $0.50\n\nPecans $0.78\n\nVanilla Custard $0.76\n\nChocs $0.20\n\nSUBTOTAL $ 22.62\n\nTOTAL $ 22.62\n\nCREDIT CARD AUTH $ 22.62\n05/24/2021 19:57\n\n$ 22.62 | EMV\n\nVISA CREDIT XXXXXXXXXXXX9999\nCustomer Name\nReference ID 870357112634 | Auth\n\nID UBMMG\nMID - *******9224\nAID : 574W6L9OITLVGW3R\n\n14315293111489220000\nOrder XBKN2Q5AIND70ZJX\nPayment B4254D39A67KATD9\n\nClover Privacy Policy\nhttps://clover.com/privacy",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "agent_name": "CFO Agent",
+                "decision": "approve",
+                "comments": "Cost of Goods Sold (COGS) for Frozen Yogurt and Custard sales\"\n\n</assistant>assistant\n\n    \"decision\": \"approve"
+            },
+            {
+                "agent_name": "Ethics Agent",
+                "decision": "approve",
+                "comments": "Document appears to be a legitimate transaction receipt for a frozen yogurt shop. No red flags or suspicious activity detected. Expense Type: Cost of Goods Sold (COGS)"
+            }
+        ],
+        "document_type": "Expense Report",
+        "content_hash": "451e40889ae507ac9cef5106e2c33c27cc8e8ce42d9048b8f5c8bf9b48bd2dc5",
+        "agents_required": [
+            "CFO Agent",
+            "Ethics Agent"
+        ]
+    },
+    {
+        "document_id": "b79c8669-67b8-4f2d-b885-5b0e9f33f692",
+        "filename": "b79c8669-67b8-4f2d-b885-5b0e9f33f692.txt",
+        "original_filename": "b79c8669-67b8-4f2d-b885-5b0e9f33f692.txt",
+        "text": "I want to build a large scale web application to solve our systems",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "agent_name": "CEO Agent",
+                "decision": "approve",
+                "comments": "The proposal seems promising"
+            },
+            {
+                "agent_name": "Chief Human Resource Officer",
+                "decision": "approve",
+                "comments": "This document outlines a plan to build a large-scale web application to solve our systems. I approve the document as it aligns with our company's strategic goals to improve operational efficiency and customer experience."
+            }
+        ],
+        "document_type": "Idea",
+        "content_hash": "3ce612f5ea1d89290e88e55920d56bb861591d6ad8ae6ed9a78ff45948ab1f33",
+        "agents_required": [
+            "CEO Agent",
+            "Chief Human Resource Officer"
+        ]
+    },
+    {
+        "document_id": "489edcf0-fccc-48b1-ace0-8340a8d233e6",
+        "filename": "489edcf0-fccc-48b1-ace0-8340a8d233e6.txt",
+        "original_filename": "489edcf0-fccc-48b1-ace0-8340a8d233e6.txt",
+        "text": "hey I would like to go to a conference which might cost $500 and this will help us to build our AI startup",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "agent_name": "CFO Agent",
+                "decision": "reject",
+                "comments": "The request lacks sufficient details. It needs to specify the conference name, its relevance to the AI startup's goals, and a breakdown of the estimated costs. A more detailed proposal is required for approval.",
+                "irs_expense_category": null
+            },
+            {
+                "agent_name": "Ethics Agent",
+                "decision": "approve",
+                "comments": "The request seems reasonable for building an AI startup. The cost is within a reasonable range for a conference.",
+                "irs_expense_category": null
+            },
+            {
+                "agent_name": "Tax Agent",
+                "decision": "approve",
+                "comments": "The conference attendance is directly related to building the AI startup, making it a business-related travel expense. It could potentially also fall under Advertising and Marketing if the conference has opportunities to promote the business.",
+                "irs_expense_category": "Travel Expenses"
+            }
+        ],
+        "document_type": "Expense Report",
+        "content_hash": "6de22e19f9f86f5226320232acd6c2d8b12aa04134ccbe77ccd46f4570fe4f4a",
+        "agents_required": [
+            "CFO Agent",
+            "Ethics Agent",
+            "Tax Agent"
+        ],
+        "irs_expense_category": "Travel Expenses"
+    },
+    {
+        "document_id": "a792d6b7-33bf-4ba6-ac3b-cd2deee31587",
+        "filename": "a792d6b7-33bf-4ba6-ac3b-cd2deee31587.txt",
+        "original_filename": "a792d6b7-33bf-4ba6-ac3b-cd2deee31587.txt",
+        "text": "hey I would like to invest $500,000 in a new startup in Sacramento I think this will really help our AI portfolio",
+        "status": "Processing Complete",
+        "agents": [],
+        "document_type": "Other",
+        "content_hash": "ce0c16cd87ad3d5a5635f6911a52725db01b5ccfc25e36b0477a27320bef748d",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "72d52388-b689-4d04-a5e4-75a464906927",
+        "filename": "72d52388-b689-4d04-a5e4-75a464906927.txt",
+        "original_filename": "72d52388-b689-4d04-a5e4-75a464906927.txt",
+        "text": "hey I would like to invest $500,000 to build a new AI in product and and this will do home inspection for the local people using AI do you think this business idea is good",
+        "status": "Processing Complete",
+        "agents": [],
+        "document_type": "Other",
+        "content_hash": "5455fcadcd35e65d04858ce43ddc98cced6086a7f73b303ba8ed580cec87a909",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "6a17b368-b9ea-420e-8304-3c3fabb34f67",
+        "filename": "6a17b368-b9ea-420e-8304-3c3fabb34f67.txt",
+        "original_filename": "6a17b368-b9ea-420e-8304-3c3fabb34f67.txt",
+        "text": "hey I would like to invest 500,000 in the new AI product which is basically going to do home inspection using AI",
+        "status": "Processing Complete",
+        "agents": [],
+        "document_type": "Other",
+        "content_hash": "2707ee8bc0c8565801c233d336a12fc7f95fd45bab7bc85aef82a7620bc769b8",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "86dc93af-bf87-4d52-aa8a-8625a80a577a",
+        "filename": "86dc93af-bf87-4d52-aa8a-8625a80a577a.txt",
+        "original_filename": "86dc93af-bf87-4d52-aa8a-8625a80a577a.txt",
+        "text": "hey is it good to invest $500,000 to building a new product AI home inspection",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "decision": "reject",
+                "comments": "Invalid agent response",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "a3c9aef1481c8e40dcb15229028cc967480e538f390a56fa60afeb357ae802da",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "8b8376c4-8c5d-4c50-9aac-6c60197c0d47",
+        "filename": "8b8376c4-8c5d-4c50-9aac-6c60197c0d47.txt",
+        "original_filename": "8b8376c4-8c5d-4c50-9aac-6c60197c0d47.txt",
+        "text": "hey I'm thinking to investor $500,000 by taking loan on the above her company to build the AI Home Inspection which will allow home inspector use AI an app to analyze various visual part of the house what do you think about the idea shall we go ahead",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "decision": "reject",
+                "comments": "Invalid agent response",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "d56a8a206ab938855f0f6334bc773e568e310c544db3b4bdc642f6f9097f2404",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "55fca798-81b5-4089-94d1-30a0850db56d",
+        "filename": "55fca798-81b5-4089-94d1-30a0850db56d.txt",
+        "original_filename": "55fca798-81b5-4089-94d1-30a0850db56d.txt",
+        "text": "hey I would like to invest $500,000 to build a new product AI enabled Home Inspection to help the home inspector",
+        "status": "Processing Complete",
+        "agents": [],
+        "document_type": "Other",
+        "content_hash": "c206d508ff781aa9cba4a9b36d06ddc232f2c994f9fc5d99338fd8008245d17b",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "747de391-7489-4ff4-b1c3-ca37fb9a9cde",
+        "filename": "747de391-7489-4ff4-b1c3-ca37fb9a9cde.txt",
+        "original_filename": "747de391-7489-4ff4-b1c3-ca37fb9a9cde.txt",
+        "text": "hey I would like to invest 500,000 in a local startup",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "decision": "reject",
+                "comments": "Invalid agent response",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "776485f0952f2e095f4b6919c83dc46c192549f30dd6bddf15321f76cf5bdc82",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "b50a9adb-94cc-44f3-8457-2f5f190f70bb",
+        "filename": "b50a9adb-94cc-44f3-8457-2f5f190f70bb.txt",
+        "original_filename": "b50a9adb-94cc-44f3-8457-2f5f190f70bb.txt",
+        "text": "hey I would like to invest in some local community for building AI enabled in features like home inspection or fire inspection and this is something that could come up with a good business what do you think",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "comments": "While I can't provide investment advice, I can say that investing in AI-enabled solutions for industries like home inspection and fire inspection could be a promising business venture. There's definitely a growing demand for efficiency and accuracy in these fields, and AI has the potential to bring significant improvements. However, it's crucial to do thorough market research, develop a solid business plan, and understand the regulatory landscape before diving in. Good luck!",
+                "decision": "reject",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "2a7d2b640fad1212faa8804ceec2ed51eb3f355926786f90cfbd4cc4dd13ba6d",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "b0202371-f8e9-43c2-a525-81f631d20da2",
+        "filename": "b0202371-f8e9-43c2-a525-81f631d20da2.txt",
+        "original_filename": "b0202371-f8e9-43c2-a525-81f631d20da2.txt",
+        "text": "hey I would like to spend $500 for a new conference I think this is going to help our startup to gain knowledge this is about ansible automation platform so we're going to use AI to build some ansible specific custom tools",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "bb9cb67bdb248ee8dafb646fcadf97592e53cdfef749dab5d9a9f57cb6dd01aa",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "d482156f-7285-48c5-bc2d-1b644e9c697f",
+        "filename": "d482156f-7285-48c5-bc2d-1b644e9c697f.txt",
+        "original_filename": "d482156f-7285-48c5-bc2d-1b644e9c697f.txt",
+        "text": "hey is it a good idea to spend $500 on a conference which is local and will be exposed to a lot of local businesses so it's in Rancho Cordova do you approve this",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "comments": "Okay, let's analyze that potential expense.\n\n**IRS Expense Category:** Advertising and Marketing\n\n**Classification Rationale:** Attending a local conference to network and gain exposure to other local businesses clearly falls under the umbrella of advertising and marketing. The goal is to promote your business, generate leads, and build relationships within your target market.\n\n**Approval Recommendation:** Approve\n\n**Reasoning:**\n\n*   **Business Purpose:** Attending a local conference is a reasonable and common way to market your business, especially if your target customers are also local businesses.\n*   **Potential Benefit:** The potential exposure to local businesses could lead to new clients, partnerships, or increased brand awareness.\n*   **Amount:** $500 seems like a reasonable amount for a local conference, although this can vary based on the conference's size, duration, and included amenities.\n*   **Documentation:** Ensure you keep records related to the conference, such as the registration confirmation, conference agenda, and any materials you receive. Also, document any business contacts made at the conference.\n\n**Important Considerations:**\n\n*   **Record Keeping:** Keep all receipts and documentation related to the conference.\n*   **Business Connection:** Be prepared to demonstrate a clear business connection between the conference and your business activities.\n*   **Reasonableness:** The IRS requires expenses to be \"ordinary and necessary.\" Attending a local conference to network is generally considered ordinary and necessary for many businesses.\n\n**Disclaimer:** As an AI Chatbot, I am not a qualified tax professional. This information is for guidance only, and it's essential to consult with a qualified tax advisor for personalized advice. They can assess your specific situation and ensure you are following all applicable tax rules and regulations.",
+                "decision": "reject",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "e8fb5c68acc2008f2ad88b0a247696c8425574ef82a3d714249da53017b2c4e7",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "8b9f8d37-0683-4e60-b242-471c3d304738",
+        "filename": "8b9f8d37-0683-4e60-b242-471c3d304738.txt",
+        "original_filename": "8b9f8d37-0683-4e60-b242-471c3d304738.txt",
+        "text": "hey I have been approached by your local starter founder to join a weekly once half a day in their events and they're in return they're going to give us 2 months of free co-working space but we are mostly working remote shall I go to that because it will require half of the time spent",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "comments": "Okay, let's think this through.\n\n**Here's what I'm weighing:**\n\n*   **Potential Benefit:** 2 months free co-working space.\n*   **Potential Cost:** Half a day of my time *every week*.\n\n**My Reasoning:**\n\nWe're mostly remote. That means the co-working space itself isn't a huge draw *unless* it offers something our remote setups don't (e.g., specialized equipment, a place to meet clients, etc.). The real value here is likely the networking opportunity at the weekly events.\n\nIs networking with other local founders valuable *enough* to justify half a day of my time every week? That depends on a few things:\n\n*   **What's the quality of the network?** Are these founders in related fields? Are they at a stage where they could offer valuable advice or partnerships?\n*   **How packed is my schedule?** Is half a day a week something I can realistically spare *without* sacrificing higher-priority tasks?\n*   **What's the opportunity cost?** What *else* could I be doing with that time that would have a bigger impact on the company?\n\n**My Decision:**\n\nWithout knowing more, I'm leaning towards **rejecting** this offer *for now*. Half a day is a significant chunk of time, and I'm not convinced the networking opportunity is valuable enough to justify it, given our remote work setup.\n\n**However, here's what I'd like to do before making a final decision:**\n\n1.  **Investigate the value of the networking:** Find out who attends these events. Are they relevant to our business?\n2.  **Assess my schedule:** Can I realistically dedicate half a day each week without hurting other priorities?\n3.  **Consider an alternative:** Could someone *else* from our team attend the events instead of me? Perhaps a junior team member who would benefit more from the networking opportunity?\n\n**Bottom line:** I'm not saying \"no\" forever, but I need more information before I can say \"yes\".",
+                "decision": "reject",
+                "agent_name": "ceo_agent"
+            },
+            {
+                "comments": "Okay, let's break this down from a tax perspective and then consider the business decision.\n\n**Tax Classification:**\n\nThe key here is that you're receiving **co-working space in exchange for your time**. This is considered a **barter transaction**.  The IRS treats barter transactions as taxable events.\n\n*   **Income:** You are receiving something of value (the co-working space) in exchange for your services (participation in the events). The fair market value of the co-working space you receive is considered **Income**. You need to determine the fair market value of two months of co-working space to report as income.\n\n*   **Operating Expenses or Advertising and Marketing:** The value of your time spent participating in the event can be classified as **Operating Expenses** or  **Advertising and Marketing**. It depends on the specific nature of your involvement. If you are actively promoting your business or generating leads, this would fall into **Advertising and Marketing**. If your primary purpose for participating in the weekly event is to develop the business or improve your professional skills, the expense is most likely an **Operating Expense**.\n\n**Approval/Rejection (Tax Perspective):**\n\nFrom a purely *tax* perspective, I can't \"approve\" or \"reject\" this. The transaction *will* have tax implications (you'll need to report the income and potentially deduct expenses), but whether you *engage* in the transaction is a business decision, not a tax one. It is important to keep accurate records of the fair market value of the coworking space you receive as well as document all expenses related to the event.\n\n**Business Decision Considerations:**\n\nBefore deciding, consider:\n\n*   **Value of the Co-working Space:** Realistically assess if two months of co-working space is worth the time investment. If you're mostly remote, will you actually *use* the space enough to justify half a day per week?\n*   **Networking/Business Development:** Beyond the space itself, what are the potential networking and business development opportunities at these events? Could they lead to valuable connections, partnerships, or new clients?\n*   **Opportunity Cost:** What else could you be doing with that half-day each week? Would that time be better spent on other business activities that generate more direct revenue?\n*   **Actual Expenses:** Factor in any transportation costs, meals, or other expenses you incur to attend the events.\n\n**Recommendation:**\n\n1.  **Determine Fair Market Value:** Research the cost of similar co-working spaces in your area to determine the fair market value of what you're receiving.\n2.  **Weigh the Pros and Cons:** Carefully weigh the value of the co-working space, the potential networking benefits, and the opportunity cost of your time.\n3.  **Track Your Time:** If you proceed, meticulously track your time spent at the events, as this is essential for justifying the expense.\n4.  **Consult a Professional:** If the value of the co-working space is significant, or if you're unsure about the tax implications, it's best to consult with a qualified tax advisor.\n\nIn conclusion, the arrangement creates a taxable barter transaction. Decide whether to proceed by weighing the financial tax implications with potential benefits.",
+                "decision": "reject",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Idea",
+        "content_hash": "06d935b026a9e1c50e2bea5a9e914239f7def312eae92de69aec1fce72936ded",
+        "agents_required": [
+            "ceo_agent",
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "671ef60c-7d19-49d1-8b1d-3406b4faeaa5",
+        "filename": "671ef60c-7d19-49d1-8b1d-3406b4faeaa5.txt",
+        "original_filename": "671ef60c-7d19-49d1-8b1d-3406b4faeaa5.txt",
+        "text": "hey we have developed a new app called Flame guard AI which helps homeowners to access their fire risk it's like a preventative mechanism we submitted in hackathon but if you want do you think we should continue this business idea and make it a product and operational",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "comments": "Based on the information provided, this sounds like a Sec. 174 research and experimental expenditure. The development costs of \"Flame Guard AI\" may be eligible for deduction or amortization depending on the specific activities and elections made by the taxpayer.",
+                "decision": "reject",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "b3ce8d945428c51284b66a6f664ebf3a8bffeb1528072d8ad3c8ab506310f80d",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "86134d54-351d-4cc7-ad27-e4e9b260b60f",
+        "filename": "86134d54-351d-4cc7-ad27-e4e9b260b60f.txt",
+        "original_filename": "86134d54-351d-4cc7-ad27-e4e9b260b60f.txt",
+        "text": "yeah I have a business idea where we can actually allow homeowners to basically access their external fire is like from neighbor generated fire and then take payment to the mechanism do you think this has a good Market",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "comments": "As a tax agent, I do not provide business advice, but I can help with IRS classifications. I would be glad to classify any tax deductible expenses you may have.",
+                "decision": "reject",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "a9fc787c271e82c8014cc17c30b0612585b37db274f2f55ad08fbee15deac1a1",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "cc3901bf-0829-4bf2-8979-00929e7477c9",
+        "filename": "cc3901bf-0829-4bf2-8979-00929e7477c9.txt",
+        "original_filename": "cc3901bf-0829-4bf2-8979-00929e7477c9.txt",
+        "text": "hey we have a new business strategy where we are thinking to start a virtual hackathon we kind of come up with the initial idea where they'll be virtual judges also do you think this is something you can explore",
+        "status": "Aggregating Results",
+        "agents": [
+            {
+                "comments": "Based on the information, the costs associated with running a virtual hackathon, including prizes and platform fees, generally fall under IRS code section 162 as ordinary and necessary business expenses. These expenses are deductible as they are directly related to promoting the business, generating leads, or fostering innovation.",
+                "decision": "reject",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "53f7a7f686fa5294d43c2a6a359995b4efc8407557a69dfd20df2c97e0f7606d",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown",
+        "final_reply": "Okay, I've reviewed the feedback. The tax perspective sees the expenses as deductible under IRS code section 162."
+    },
+    {
+        "document_id": "c55c32f8-437d-455d-8cf2-171db87d4f80",
+        "filename": "c55c32f8-437d-455d-8cf2-171db87d4f80.txt",
+        "original_filename": "c55c32f8-437d-455d-8cf2-171db87d4f80.txt",
+        "text": "hey can we invest $5,000 buying a new Nvidia computer",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "comments": "That would be considered a capital expenditure under Section 179, and the decision is that it may be eligible for a deduction.",
+                "decision": "reject",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Other",
+        "content_hash": "53bd2854b165cf4659bc16a48d0736630dfa4bb1720b6a128ad5ffb22660c16c",
+        "agents_required": [
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "79163129-f714-48c0-90f9-c58ee573ad58",
+        "filename": "79163129-f714-48c0-90f9-c58ee573ad58.txt",
+        "original_filename": "79163129-f714-48c0-90f9-c58ee573ad58.txt",
+        "text": "hey is it good idea to invest on a fire prevention aif which will help homeowners to access their existing fire is by uploading some images of outside of their home and that Apple connect them to a local contractor",
+        "status": "Processing Failed",
+        "agents": [
+            {
+                "comments": "I don't think that's a worthwhile investment. I'm going to have to reject that idea.",
+                "decision": "reject",
+                "agent_name": "ceo_agent"
+            },
+            {
+                "comments": "Based on your description, this sounds like a business expense potentially related to property improvements. The IRS code category would depend on the specific nature of the expenditure and its impact on the property's value; however, it could likely fall under **capital expenditures** and should be depreciated over time rather than deducted immediately.",
+                "decision": "reject",
+                "agent_name": "tax_agent"
+            }
+        ],
+        "document_type": "Idea",
+        "content_hash": "e9f177fbe926f508631d3af28b76154e3dc7083605a10ca0c42c87b16ae4777f",
+        "agents_required": [
+            "ceo_agent",
+            "tax_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "ac44bdab-ba18-4f3e-b92a-779ab7dfaaba",
+        "filename": "ac44bdab-ba18-4f3e-b92a-779ab7dfaaba.txt",
+        "original_filename": "ac44bdab-ba18-4f3e-b92a-779ab7dfaaba.txt",
+        "text": "hey I'm thinking to set aside some $500,000 to invest in some set up our lab using Nvidia GPU",
+        "status": "Processing Complete",
+        "agents": [],
+        "document_type": "Idea",
+        "content_hash": "cad521f15327cef61fa771b00db002f726c495102beb1c108c935cff15986f8a",
+        "agents_required": [],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "cdfdecaf-fb6e-432b-8bf6-d380a7dd1734",
+        "filename": "cdfdecaf-fb6e-432b-8bf6-d380a7dd1734.txt",
+        "original_filename": "cdfdecaf-fb6e-432b-8bf6-d380a7dd1734.txt",
+        "text": "hey I'm thinking to set aside 500,000 to invest in a lab where we will use fine tuning of various llm model to improve our capability",
+        "status": "Processing Complete",
+        "agents": [],
+        "document_type": "Idea",
+        "content_hash": "22d4a412fb50bd5c763690ebf9f19ec9e9f9cc37c5f889a6ead075e58df6fb54",
+        "agents_required": [],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "f9867eb9-5583-41a0-9256-f0d60a587dcf",
+        "filename": "f9867eb9-5583-41a0-9256-f0d60a587dcf.txt",
+        "original_filename": "f9867eb9-5583-41a0-9256-f0d60a587dcf.txt",
+        "text": "hey it will be will be wise to invest around $10,000 to buy Nvidia GPU in in lab for local llm processing or we should use llm API like Google cloud or Gemini",
+        "status": "Processing Data",
+        "agents": [],
+        "document_type": "Question",
+        "content_hash": "2386d4715569b514bc060d01fd4ddf259ee820496e5a2375c5158872ccfe267f",
+        "agents_required": [],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "937c5a79-781f-404f-8616-d464d3302b5f",
+        "filename": "937c5a79-781f-404f-8616-d464d3302b5f.txt",
+        "original_filename": "937c5a79-781f-404f-8616-d464d3302b5f.txt",
+        "text": "hey is it going to be at work investment setting up AI lab in our on premise environment for llm insurance instead of using the open AI or Gemini SAS API",
+        "status": "Processing Data",
+        "agents": [],
+        "document_type": "Idea",
+        "content_hash": "5d8fb3c7db32c412a15e3bcdc08babb86c0c3e84e270d405b3694354192e73e3",
+        "agents_required": [],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "fa7e732c-31d2-4028-aa0a-1acd43c0c1e4",
+        "filename": "fa7e732c-31d2-4028-aa0a-1acd43c0c1e4.txt",
+        "original_filename": "fa7e732c-31d2-4028-aa0a-1acd43c0c1e4.txt",
+        "text": "hey is it going to be worth investment setting up a lab by spending $10,000 for NVIDIA GPU instead of using llm API call like gemini or openai for our new Jeremy project",
+        "status": "Completed",
+        "agents": [],
+        "document_type": "Question",
+        "content_hash": "b8ee900f598eaa4cf7cf1ae76faf2dc1b6ec6ea4b09f78b1643f98b5489853fc",
+        "agents_required": [],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "7456e083-a147-427f-94e9-7fb4fe6049ba",
+        "filename": "7456e083-a147-427f-94e9-7fb4fe6049ba.txt",
+        "original_filename": "7456e083-a147-427f-94e9-7fb4fe6049ba.txt",
+        "text": "hey is it going to be worth investment to set up a lab of $10,000 for insurance of large language model instead of using open AI or Gemini assass API and this is we need for our new project",
+        "status": "Completed",
+        "agents": [],
+        "document_type": "Question",
+        "content_hash": "f67ab0a981660c50c9cb576c92fa74385bec2dbe3430e1eea3be1eef57e1fa25",
+        "agents_required": [],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "c3f5d385-5e28-407e-a21b-b2b4e75172fc",
+        "filename": "c3f5d385-5e28-407e-a21b-b2b4e75172fc.txt",
+        "original_filename": "c3f5d385-5e28-407e-a21b-b2b4e75172fc.txt",
+        "text": "hey will it be worth investment to spend $1,000 to set buy a new GPU instead of using that as a API credit for inference of llmapi what do you think",
+        "status": "Completed",
+        "agents": [
+            {
+                "comments": "From a purely financial standpoint, consider the long-term usage. $1,000 in API credits might offer more immediate output, while a GPU is a sunk cost that could offer longer-term, cheaper inference if you use it heavily.",
+                "decision": "reject",
+                "agent_name": "finance_agent"
+            },
+            {
+                "comments": "A new GPU offers local, faster, and potentially cheaper long-term inference, but requires upfront investment and technical setup. API credits provide immediate access to powerful models without hardware management, but costs scale with usage.",
+                "decision": "reject",
+                "agent_name": "technology_agent"
+            }
+        ],
+        "document_type": "Question",
+        "content_hash": "46db9de369d36536b01e0403594c62162110d29e22fafbdee7c7f1df258b0c58",
+        "agents_required": [
+            "finance_agent",
+            "technology_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "4ef94b0b-8a6d-4e5d-a48d-de369d6cf00b",
+        "filename": "4ef94b0b-8a6d-4e5d-a48d-de369d6cf00b.txt",
+        "original_filename": "4ef94b0b-8a6d-4e5d-a48d-de369d6cf00b.txt",
+        "text": "hey is it going to be worth investment spending $500 on going to a conference where we will get more AI insights or you think we should rather buy an online course",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "comments": "Attending an AI conference offers networking and hands-on experiences, while an online course provides structured learning at a lower cost. The better investment depends on your priorities: immediate practical application versus broader industry exposure.",
+                "decision": "reject",
+                "agent_name": "technology_agent"
+            },
+            {
+                "comments": "From a financial standpoint, let's weigh the $500 conference cost against the potential for a higher return from in-person networking and insights versus the lower cost, but potentially less impactful, online course. We need to assess which option provides the best value for gaining actionable AI knowledge.",
+                "decision": "reject",
+                "agent_name": "finance_agent"
+            }
+        ],
+        "document_type": "Question",
+        "content_hash": "be70362ce70657246e551ebd880b653a3c8cc182de0f53e749e9d6c820d4ec11",
+        "agents_required": [
+            "technology_agent",
+            "finance_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "a0ae08a5-6a38-4737-ba9b-6c6328da9701",
+        "filename": "a0ae08a5-6a38-4737-ba9b-6c6328da9701.txt",
+        "original_filename": "a0ae08a5-6a38-4737-ba9b-6c6328da9701.txt",
+        "text": "hey we are thinking to expand our portfolio on building a new generation which will help homeowners to access their external virus is this something we should invest our time and money",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "comments": "Okay, I see the potential market for something like that. But right now, we need to laser-focus on our core product and nail the current roadmap. New homeowner tech is a distraction. Reject.",
+                "decision": "reject",
+                "agent_name": "ceo_agent"
+            },
+            {
+                "comments": "That's an interesting idea! Technically, it's feasible, but we need to carefully consider the deployment effort, scalability, and real-world adoption challenges, especially around user privacy and security.",
+                "decision": "reject",
+                "agent_name": "technology_agent"
+            }
+        ],
+        "document_type": "Idea",
+        "content_hash": "f86b1ab828bbabd015d0478761a072933a0c449f8321cdaf295eb0c91b5d7395",
+        "agents_required": [
+            "ceo_agent",
+            "technology_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "7d1a4971-e4e7-4035-9bfe-8adfb4cfc20b",
+        "filename": "7d1a4971-e4e7-4035-9bfe-8adfb4cfc20b.png",
+        "original_filename": "Screenshot 2025-06-23 at 1.30.54\u202fPM.png",
+        "text": "ICE Cream - Frozen Yogurt\n23223, DAVIS AVE\nAPEX, SC, 32322\n888 888 8888\n\nServing All-Natural Frozen Custard\nORDER: 37\n\n05/24/2021 19:55\nTransaction 6896571\n\n1 Regular Concrete $5.50\n\nVanilla Custard $0.75\n\nWainuts $0.49\n\nPecans $0.39\n\nCaramel $0.25\n\n2 Special Oreo Concrete $13.00\n\nCaramel $0.50\n\nPecans $078\n\nVanilla Custard $0.76\n\nChocs $0.20\n\nSUBTOTAL $ 22.62\n\nTOTAL $ 22.62\n\nCREDIT CARD AUTH $22.62\n05/24/2021 19:57\n\n$ 22.62| EMV\n\nVISA CREDIT XXXXXX0OXXXXX9999\nCustomer Name\nReference ID 870357112634 | Auth\n\n1D UBMMG\nMID : ********8221\nAID : 574W6LSOITLVGW3R,\n\n14315293111489220000\n\nOrder XBKN2Q5AIND70ZJX\nPayment B4254D39A67KATD9\n\nClover Privacy Policy\nhttps://clover.comiprivacy\n\n",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "comments": "Okay, so $22.62 on ice cream... While I appreciate the team bonding, this doesn't seem to advance our IP roadmap or offer any ROI. I'm going to have to mark this as unjustifiable given our budget threshold and focus on sustainable growth. Denied.",
+                "decision": "reject",
+                "agent_name": "finance_agent"
+            }
+        ],
+        "document_type": "Expense Report",
+        "content_hash": "1be537c99bb66584c5a512b70ebf6d92c03b50fd457cf58e161f3e68fe137cb5",
+        "agents_required": [
+            "finance_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "d854ebcc-e55d-4e6d-b855-89666aef81e8",
+        "filename": "d854ebcc-e55d-4e6d-b855-89666aef81e8.txt",
+        "original_filename": "d854ebcc-e55d-4e6d-b855-89666aef81e8.txt",
+        "text": "hey we would like to build a new application which will actually do the patent analysis and we are thinking to file become a USB to registered agent so for that we need to be initial fee of I think $500 for registration do you think it will be a good idea to be a good service",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "comments": "Becoming a USPTO Registered Agent involves strict compliance with USPTO regulations, including demonstrating the requisite legal and technical qualifications; failure to meet these standards or adequately represent clients carries legal risks. Given the budget constraints and focus on AI-driven patent analysis, this proposal is rejected as it diverts resources from core research and patentable output.",
+                "decision": "reject",
+                "agent_name": "legal_agent"
+            },
+            {
+                "comments": "Becoming a USPTO registered agent could definitely align with your IP development focus and potentially generate revenue. However, given your limited capital and bandwidth, the initial \\$500 fee and the ongoing requirements might strain resources better allocated to direct patent analysis and IP creation.",
+                "decision": "reject",
+                "agent_name": "technology_agent"
+            }
+        ],
+        "document_type": "Idea",
+        "content_hash": "81c8c6a57c3a197dcb741d1849a75a67d1d8070e27b93564a27a01728efc2751",
+        "agents_required": [
+            "legal_agent",
+            "technology_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "307dc9a6-e012-4040-9301-ac6831529abd",
+        "filename": "307dc9a6-e012-4040-9301-ac6831529abd.txt",
+        "original_filename": "307dc9a6-e012-4040-9301-ac6831529abd.txt",
+        "text": "he locked this decision that we are pivoting from our application development strategy to move a service oriented strategy and we are thinking to solve as a patent agent we are not a lawyer for him so but this is something we are exploding just log this decision",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "comments": "Okay, I've logged the decision to shift towards a service-oriented strategy leveraging our AI for patent analysis. Let's keep a close eye on the bandwidth this requires from the founders and ensure it directly leads to patentable output for our IP portfolio. We need to carefully manage our limited capital and avoid speculative activities that don't directly contribute to our core mission.",
+                "decision": "reject",
+                "agent_name": "ceo_agent"
+            },
+            {
+                "comments": "Okay, I've logged the decision to pivot towards a service-oriented strategy focused on patent agent services. Given our constraints, this seems feasible and aligns with generating patentable outputs, but we'll need to carefully manage founder bandwidth and ensure services directly contribute to IP development to stay sustainable.",
+                "decision": "reject",
+                "agent_name": "technology_agent"
+            },
+            {
+                "comments": "This pivot to a service-oriented strategy focused on patent agent services presents risks related to potential unauthorized practice of law if not carefully managed, as well as compliance concerns regarding regulations governing patent agents. Contractual implications may arise if existing application development agreements need to be renegotiated or terminated. Reject.",
+                "decision": "reject",
+                "agent_name": "legal_agent"
+            },
+            {
+                "comments": "Decision: Pivot from application development to a service-oriented strategy focused on patent agent support.",
+                "decision": "reject",
+                "agent_name": "decision_logger_agent"
+            }
+        ],
+        "document_type": "Company Profile",
+        "content_hash": "93c6e318f60af7ffc374be67217820075f3d24494ed744672233d47fc71fa00f",
+        "agents_required": [
+            "ceo_agent",
+            "technology_agent",
+            "legal_agent",
+            "decision_logger_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    },
+    {
+        "document_id": "f8fea439-a633-472e-9bcd-2078c2a450c0",
+        "filename": "f8fea439-a633-472e-9bcd-2078c2a450c0.txt",
+        "original_filename": "f8fea439-a633-472e-9bcd-2078c2a450c0.txt",
+        "text": "hey record this decision that we are pivoting from application development to more service type of business",
+        "status": "Logged",
+        "agents": [
+            {
+                "agent_name": "decision_logger_agent",
+                "comments": "Decision: Pivot business model from application development to service-oriented offerings.",
+                "decision": "recorded"
+            }
+        ],
+        "document_type": "Decision",
+        "content_hash": "1c4a87b5602fb9e00dd65ab2ff5f143cb689073dcac1b28fb432cf49eaeb4a33",
+        "agents_required": [
+            "decision_logger_agent"
+        ],
+        "irs_expense_category": "N/A"
+    },
+    {
+        "document_id": "b49061fa-15ba-428e-bef9-f05fb6aede3e",
+        "filename": "b49061fa-15ba-428e-bef9-f05fb6aede3e.txt",
+        "original_filename": "b49061fa-15ba-428e-bef9-f05fb6aede3e.txt",
+        "text": "hey we are logged this decision so that we can audit it later that we are moving from application development to you know Consulting and service based business",
+        "status": "Processing Complete",
+        "agents": [
+            {
+                "comments": "Okay, I understand the rationale for the shift. Given our constraints and focus on patentable output, I'm going to have to reject moving towards consulting. It would spread our limited resources too thin and doesn't directly advance our IP development goals. We need to stay laser-focused.",
+                "decision": "reject",
+                "agent_name": "ceo_agent"
+            },
+            {
+                "comments": "Decision: Transition business model from application development to consulting and service-based offerings.",
+                "decision": "reject",
+                "agent_name": "decision_logger_agent"
+            }
+        ],
+        "document_type": "Key Decision",
+        "content_hash": "cb5c3aa0f84f688d211918be3d74cdb93b695b71bb79a055de0fc7f960742fdb",
+        "agents_required": [
+            "ceo_agent",
+            "decision_logger_agent"
+        ],
+        "irs_expense_category": "Unknown"
+    }
+]

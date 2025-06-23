@@ -1,0 +1,1 @@
+hey is it going to be at work investment setting up AI lab in our on premise environment for llm insurance instead of using the open AI or Gemini SAS API

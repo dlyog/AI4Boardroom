@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Upload Recording</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+        }
+
+        .phone {
+            width: 100%;
+            max-width: 500px;
+            height: 100vh;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        @media (min-width: 600px) {
+            .phone {
+                height: 90vh;
+                margin: 5vh auto;
+                border-radius: 40px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .back-link i {
+            font-size: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 20px 0;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .upload-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .upload-card, .voice-record-button {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .upload-card:hover, .voice-record-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .upload-card:active, .voice-record-button:active {
+            transform: scale(0.98);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .card-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            place-items: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .modal-message {
+            white-space: pre-line;
+            word-break: break-word;
+            margin-bottom: 25px;
+            color: #4b5563;
+            line-height: 1.5;
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        /* Progress Steps */
+        .progress-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .progress-step {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active {
+            background: rgba(79, 70, 229, 0.2);
+            border-left: 4px solid #4f46e5;
+        }
+
+        .progress-step.completed {
+            background: rgba(34, 197, 94, 0.2);
+            border-left: 4px solid #22c55e;
+        }
+
+        .progress-step.failed {
+            background: rgba(239, 68, 68, 0.2);
+            border-left: 4px solid #ef4444;
+        }
+
+        .progress-icon {
+            font-size: 20px;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        /* Recording Modal */
+        .recording-modal {
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .recording-animation {
+            width: 120px;
+            height: 120px;
+            border: 4px solid #4f46e5;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            position: relative;
+            animation: pulse 1.5s infinite;
+        }
+
+        .recording-status {
+            font-size: 1.25rem;
+            color: #4f46e5;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .recording-time {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            font-variant-numeric: tabular-nums;
+            margin-bottom: 30px;
+        }
+
+        .stop-recording {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .stop-recording:hover {
+            opacity: 0.9;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Button Styles */
+        .btn {
+            background: #4f46e5;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <a href="/" class="back-link">
+            <i class="fas fa-chevron-left"></i>
+            Back
+        </a>
+
+
+        
+        <div class="upload-options">
+            <label class="upload-card" for="fileInput" role="button" tabindex="0">
+                <div class="card-icon">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <div class="card-title">Upload Document</div>
+                <div class="card-text">Click or drag image/PDF here</div>
+            </label>
+            
+            <div class="camera-card upload-card" role="button" tabindex="0">
+                <div class="card-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="card-title">Take Photo</div>
+                <div class="card-text">Use camera to capture document</div>
+            </div>
+            
+            <div class="voice-record-button" role="button" tabindex="0">
+                <div class="card-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <div class="card-title">Record Audio</div>
+                <div class="card-text">Start a new recording</div>
+            </div>
+        </div>
+
+        <input id="fileInput" type="file" accept="image/*,.pdf">
+    </div>
+
+    <!-- Camera Modal -->
+<div id="cameraModal" class="modal">
+    <div class="modal-content camera-modal">
+        <video id="cameraFeed" class="camera-feed" autoplay playsinline></video>
+        <canvas id="photoCanvas" class="hidden"></canvas>
+        <div class="camera-controls">
+            <button id="switchCamera" class="camera-btn">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+            <button id="capturePhoto" class="camera-btn capture-btn">
+                <i class="fas fa-camera"></i>
+            </button>
+            <button id="closeCameraModal" class="camera-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div id="retakeButtons" class="retake-buttons hidden">
+            <button id="retakePhoto" class="btn">Retake</button>
+            <button id="usePhoto" class="btn">Use Photo</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Progress Modal -->
+    <div id="progressModal" class="modal" role="dialog">
+        <div class="modal-content">
+            <h2 class="card-title text-center text-gray-800">Processing Input..</h2>
+            <div class="progress-container">
+                <div id="step-upload" class="progress-step">
+                    <div class="progress-icon">⏳</div>
+                    <div class="progress-text">Upload in Progress</div>
+                </div>
+                <div id="step-processing" class="progress-step">
+                    <div class="progress-icon">⏳</div>
+                    <div class="progress-text">Processing Input</div>
+                </div>
+            </div>
+            <div id="viewAuditLink" class="text-center mt-4 hidden">
+                <a href="/audit" class="text-indigo-600 hover:text-indigo-800 font-medium">
+                    View Audit
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Recording Modal -->
+    <div id="voiceModal" class="modal">
+        <div class="modal-content recording-modal">
+            <div class="recording-animation"></div>
+            <div class="recording-status">Recording...</div>
+            <div class="recording-time">00:00</div>
+            <button class="stop-recording">Stop Recording</button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" role="dialog">
+        <div class="modal-content">
+            <h2 class="card-title text-center text-green-600 mb-4">Processing Complete</h2>
+            <pre id="successMessage" class="modal-message text-gray-700 whitespace-pre-wrap text-left"></pre>
+            <div class="text-center mt-4">
+                <a href="/audit" class="text-indigo-600 hover:text-indigo-800 font-medium">
+                    View Audit
+                </a>
+            </div>
+            <button id="closeSuccessModal" class="btn mt-4">Close</button>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal" role="dialog">
+        <div class="modal-content">
+            <h2 class="card-title text-center text-red-600 mb-4">Error</h2>
+            <p id="errorMessage" class="modal-message text-gray-700"></p>
+            <button id="closeErrorModal" class="btn mt-4">Close</button>
+        </div>
+    </div>
+
+    <script>
+
+        // Camera handling
+const cameraCard = document.querySelector('.camera-card');
+const cameraModal = document.getElementById('cameraModal');
+const cameraFeed = document.getElementById('cameraFeed');
+const photoCanvas = document.getElementById('photoCanvas');
+const captureButton = document.getElementById('capturePhoto');
+const switchCameraButton = document.getElementById('switchCamera');
+const closeCameraButton = document.getElementById('closeCameraModal');
+const retakeButtons = document.getElementById('retakeButtons');
+const retakeButton = document.getElementById('retakePhoto');
+const usePhotoButton = document.getElementById('usePhoto');
+
+let stream = null;
+let facingMode = 'environment'; // Start with back camera
+
+async function startCamera() {
+    try {
+        if (stream) {
+            stream.getTracks().forEach(track => track.stop());
+        }
+
+        stream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: facingMode },
+            audio: false
+        });
+        
+        cameraFeed.srcObject = stream;
+        showModal(cameraModal);
+        cameraFeed.classList.remove('hidden');
+        photoCanvas.classList.add('hidden');
+        retakeButtons.classList.add('hidden');
+        captureButton.style.display = 'block';
+    } catch (err) {
+        console.error('Error accessing camera:', err);
+        errorMessage.textContent = 'Unable to access camera. Please ensure camera permissions are granted.';
+        showModal(errorModal);
+    }
+}
+
+function stopCamera() {
+    if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        stream = null;
+    }
+    hideModal(cameraModal);
+}
+
+function capturePhoto() {
+    const context = photoCanvas.getContext('2d');
+    photoCanvas.width = cameraFeed.videoWidth;
+    photoCanvas.height = cameraFeed.videoHeight;
+    context.drawImage(cameraFeed, 0, 0, photoCanvas.width, photoCanvas.height);
+    
+    cameraFeed.classList.add('hidden');
+    photoCanvas.classList.remove('hidden');
+    retakeButtons.classList.remove('hidden');
+    captureButton.style.display = 'none';
+}
+
+async function usePhoto() {
+    photoCanvas.toBlob(async (blob) => {
+        const file = new File([blob], 'camera-capture.jpg', { type: 'image/jpeg' });
+        stopCamera();
+        await handleUpload(file);
+    }, 'image/jpeg');
+}
+
+function switchCamera() {
+    facingMode = facingMode === 'environment' ? 'user' : 'environment';
+    startCamera();
+}
+
+// Add event listeners
+cameraCard.addEventListener('click', startCamera);
+cameraCard.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        startCamera();
+    }
+});
+captureButton.addEventListener('click', capturePhoto);
+switchCameraButton.addEventListener('click', switchCamera);
+closeCameraModal.addEventListener('click', stopCamera);
+retakeButton.addEventListener('click', startCamera);
+usePhotoButton.addEventListener('click', usePhoto);
+
+        const fileInput = document.getElementById('fileInput');
+        const uploadCard = document.querySelector('.upload-card');
+        const voiceRecordButton = document.querySelector('.voice-record-button');
+        const progressModal = document.getElementById('progressModal');
+        const voiceModal = document.getElementById('voiceModal');
+        const successModal = document.getElementById('successModal');
+        const errorModal = document.getElementById('errorModal');
+        const closeSuccessModal = document.getElementById('closeSuccessModal');
+        const closeErrorModal = document.getElementById('closeErrorModal');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        let recognition;
+        let recordingTimer;
+        let startTime;
+
+        function showModal(modal) {
+            modal.style.display = 'grid';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal(modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // File Upload Handlers
+        uploadCard.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                fileInput.click();
+            }
+        });
+
+        uploadCard.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadCard.style.background = 'rgba(255, 255, 255, 0.2)';
+        });
+
+        uploadCard.addEventListener('dragleave', () => {
+            uploadCard.style.background = 'rgba(255, 255, 255, 0.1)';
+        });
+
+        uploadCard.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadCard.style.background = 'rgba(255, 255, 255, 0.1)';
+            if (e.dataTransfer.files.length) {
+                fileInput.files = e.dataTransfer.files;
+                handleUpload(e.dataTransfer.files[0]);
+            }
+        });
+
+        // Voice Recording Handlers
+        voiceRecordButton.addEventListener('click', startRecording);
+        document.querySelector('.stop-recording').addEventListener('click', stopRecording);
+
+        function startRecording() {
+            if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {
+                alert('Your browser does not support speech recognition. Please use Google Chrome.');
+                return;
+            }
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+
+            let transcript = '';
+
+            recognition.onresult = (event) => {
+                for (let i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        transcript += event.results[i][0].transcript;
+                    }
+                }
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                errorMessage.textContent = 'Speech recognition error occurred.';
+                hideModal(voiceModal);
+                showModal(errorModal);
+            };
+
+            recognition.onend = () => {
+                processTranscription(transcript);
+            };
+
+            recognition.start();
+            showModal(voiceModal);
+            startTimers();
+        }
+
+        function stopRecording() {
+            if (recognition) {
+                recognition.stop();
+                clearInterval(recordingTimer);
+            }
+        }
+
+        function startTimers() {
+            const timeDisplay = document.querySelector('.recording-time');
+            startTime = Date.now();
+            recordingTimer = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60).toString().padStart(2, '0');
+                const seconds = (elapsed % 60).toString().padStart(2, '0');
+                timeDisplay.textContent = `${minutes}:${seconds}`;
+            }, 1000);
+        }
+
+        async function processTranscription(transcript) {
+            hideModal(voiceModal);
+            console.log('Transcribed text:', transcript); // Log the transcribed text
+            if (!transcript.trim()) {
+                errorMessage.textContent = 'No speech detected. Please try again.';
+                showModal(errorModal);
+                return;
+            }
+            showModal(progressModal);
+            updateProgressStep('step-upload', 'active');
+
+            try {
+                const formData = new FormData();
+                formData.append('text', transcript);
+                console.log('FormData contents:', formData.get('text')); // Log the form data
+
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                handleUploadResponse(data);
+            } catch (error) {
+                console.error('Error processing transcription:', error);
+                hideModal(progressModal);
+                errorMessage.textContent = 'Failed to process transcription.';
+                showModal(errorModal);
+            }
+        }
+
+
+        async function handleUpload(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                showModal(progressModal);
+                updateProgressStep('step-upload', 'active');
+
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                handleUploadResponse(data);
+            } catch (error) {
+                console.error(error);
+                hideModal(progressModal);
+                errorMessage.textContent = error.message || 'Failed to upload the file';
+                showModal(errorModal);
+            }
+        }
+
+        function handleUploadResponse(data) {
+            if (data.status === 'processing') {
+                updateProgressStep('step-upload', 'completed');
+                updateProgressStep('step-processing', 'active');
+                pollStatus(data.document_id);
+            } else if (data.status === 'duplicate') {
+                hideModal(progressModal);
+                errorMessage.textContent = data.message;
+                showModal(errorModal);
+            } else {
+                hideModal(progressModal);
+                errorMessage.textContent = data.message || 'An unexpected error occurred';
+                showModal(errorModal);
+            }
+        }
+
+        function pollStatus(documentId) {
+            const interval = setInterval(async () => {
+                try {
+                    const response = await fetch(`/status/${documentId}`);
+                    const data = await response.json();
+
+                    updateProgressUI(data);
+
+                    if (data.status === 'Processing Complete' || data.status === 'Processing Failed') {
+                        clearInterval(interval);
+                        hideModal(progressModal);
+                        const messages = data.agents?.map(agent => 
+                            `${agent.agent_name}: ${agent.decision}\nComments: ${agent.comments}`
+                        ).join('\n\n') || '';
+
+                        const originalText = data.original_text || '[No input text found]';
+
+                        successMessage.textContent = `Document ${data.status}\n\nUser Input:\n${originalText}\n\nAgent Decisions:\n${messages}`;
+
+                        showModal(successModal);
+                    }
+                } catch (error) {
+                    console.error(error);
+                    clearInterval(interval);
+                    hideModal(progressModal);
+                    errorMessage.textContent = 'Error checking status';
+                    showModal(errorModal);
+                }
+            }, 2000);
+        }
+
+        function updateProgressUI(data) {
+            updateProgressStep('step-upload', 'completed');
+
+            if (data.status === 'Processing Data') {
+                updateProgressStep('step-processing', 'active');
+            } else if (data.status.startsWith('Review by')) {
+                updateProgressStep('step-processing', 'completed');
+
+                const agentName = data.status.replace('Review by ', '').replace(' In Progress', '').trim();
+
+                if (!document.getElementById(`step-${agentName}`)) {
+                    addAgentStep(agentName);
+                }
+
+                updateProgressStep(`step-${agentName}`, 'active');
+
+                data.agents?.forEach(agent => {
+                    const stepId = `step-${agent.agent_name}`;
+                    const status = agent.decision === 'approve' ? 'completed' : 'failed';
+                    updateProgressStep(stepId, status);
+                });
+            }
+
+            if (data.status === 'Processing Complete' || data.status === 'Processing Failed') {
+                document.getElementById('viewAuditLink').classList.remove('hidden');
+            }
+        }
+
+        function addAgentStep(agentName) {
+            const container = document.querySelector('.progress-container');
+            const step = document.createElement('div');
+            step.id = `step-${agentName}`;
+            step.className = 'progress-step';
+            step.innerHTML = `
+                <div class="progress-icon">⏳</div>
+                <div class="progress-text">Review by ${agentName}</div>
+            `;
+            container.appendChild(step);
+        }
+
+        function updateProgressStep(stepId, status) {
+            const step = document.getElementById(stepId);
+            if (step) {
+                step.className = `progress-step ${status}`;
+                const icon = step.querySelector('.progress-icon');
+                icon.textContent = status === 'active' ? '⏳' : status === 'completed' ? '✅' : '❌';
+            }
+        }
+
+        // Modal close handlers
+        closeSuccessModal.addEventListener('click', () => hideModal(successModal));
+        closeErrorModal.addEventListener('click', () => hideModal(errorModal));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                hideModal(successModal);
+                hideModal(errorModal);
+                hideModal(voiceModal);
+            }
+        });
+
+        // File input change handler
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) {
+                handleUpload(e.target.files[0]);
+            }
+        });
+    </script>
+
+    <style>
+
+        /* Camera Modal Styles */
+.camera-modal {
+    padding: 0 !important;
+    max-width: 600px !important;
+    width: 95% !important;
+    aspect-ratio: 4/3;
+    position: relative;
+    background: #000 !important;
+    overflow: hidden;
+}
+
+.camera-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.camera-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.camera-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.camera-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.capture-btn {
+    width: 70px;
+    height: 70px;
+    background: white;
+    color: #4f46e5;
+}
+
+.capture-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.retake-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.retake-buttons .btn {
+    flex: 1;
+    max-width: 150px;
+}
+
+#photoCanvas.hidden,
+.retake-buttons.hidden {
+    display: none;
+}
+    </style>
+
+
+<!-- Update these CSS classes -->
+<style>
+    .phone {
+        width: 100%;
+        max-width: 500px;
+        min-height: 100vh; /* Change from height to min-height */
+        margin: 0 auto;
+        background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow-y: auto;
+    }
+
+    @media (min-width: 600px) {
+        .phone {
+            min-height: 90vh; /* Change from height to min-height */
+            height: auto;
+            margin: 5vh auto;
+            border-radius: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    }
+
+    .upload-options {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+        flex: 1;
+    }
+
+    .upload-card, .voice-record-button {
+        min-height: 150px; /* Add minimum height */
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    /* Camera Modal Responsive Updates */
+    .camera-modal {
+        width: 95% !important;
+        max-width: 100% !important;
+        aspect-ratio: auto; /* Remove fixed aspect ratio */
+        height: 80vh;
+        margin: 10vh auto;
+    }
+
+    .camera-feed, #photoCanvas {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Modal Responsive Updates */
+    .modal-content {
+        width: 90%;
+        max-width: 400px;
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: auto;
+    }
+
+    /* Adjust camera controls for mobile */
+    .camera-controls {
+        bottom: 30px;
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .camera-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .capture-btn {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Adjust text sizes for mobile */
+    @media (max-width: 380px) {
+        .card-title {
+            font-size: 1.1rem;
+        }
+
+        .card-text {
+            font-size: 0.85rem;
+        }
+
+        .header h1 {
+            font-size: 1.75rem;
+        }
+    }
+
+    /* Fix modal display on mobile */
+    @media (max-width: 600px) {
+        .modal {
+            padding: 10px;
+        }
+
+        .recording-modal {
+            padding: 20px;
+        }
+
+        .recording-time {
+            font-size: 2rem;
+        }
+    }
+</style>
+</body>
+</html>

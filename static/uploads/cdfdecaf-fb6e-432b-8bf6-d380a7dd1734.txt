@@ -1,0 +1,1 @@
+hey I'm thinking to set aside 500,000 to invest in a lab where we will use fine tuning of various llm model to improve our capability

@@ -1,0 +1,69 @@
+{
+  "company_name": "DLYog Lab Research Services LLC",
+  "founders": ["Mousumi Chawdhury", "Tarun Chawdhury"],
+  "mission_statement": "To advance AI innovation and IP strategy by transforming breakthrough ideas into valuable intellectual property.",
+  "initial_capital": 5000,
+  "current_stage": "self-funded research lab",
+  "core_focus": "AI-driven patent analysis and IP development",
+  "roadmap_focus": [
+    "AI research for social good",
+    "Internal patent generation",
+    "Strategic licensing of IP",
+    "Hackathon-led innovation",
+    "Consulting in AI for legal, finance, and career applications"
+  ],
+  "key_constraints": [
+    "limited bandwidth of founders",
+    "no external funding",
+    "non-public tools and services"
+  ],
+  "risk_tolerance": "medium",
+  "legal_policy_note": "Does not provide legal advice. Refers clients to qualified legal professionals.",
+  "company_values": [
+    "social impact",
+    "ethical AI development",
+    "family-driven innovation",
+    "conflict-free collaboration",
+    "confidentiality and compliance"
+  ],
+  "notable_projects": [
+    "FlameGuardAI",
+    "AI4Echolalia",
+    "IEP CoPilot",
+    "AI for Personal Finance",
+    "AI for Career Building"
+  ],
+  "awards": [
+    "TED AI 2024 SF Hackathon Winner",
+    "Microsoft Developers AI Hackathon Finalist"
+  ],
+  "decision_criteria": {
+    "financial": {
+      "budget_threshold": 500,
+      "require_justification": true,
+      "must_advance_growth": true,
+      "avoid_redundant_or_speculative": true,
+      "sustainability_focus": true
+    },
+    "strategic_alignment": {
+      "align_with_roadmap": true,
+      "prioritize_patentable_output": true,
+      "enable community or business value": true
+    }
+  },
+  "policy_notes": {
+    "minor_participation": "Minors only participate under direct supervision; no formal or commercial involvement.",
+    "employment": "Founders do not draw salary; company has no full-time staff yet.",
+    "independence": "No use of employer resources; all work done personally and independently."
+  },
+  "compliance": {
+    "entity_type": "LLC",
+    "state": "California",
+    "banking": "Separate business bank account maintained",
+    "filings": [
+      "Initial Statement of Information",
+      "Biennial Updates",
+      "IRS community property election compliance"
+    ]
+  }
+}

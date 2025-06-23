@@ -2,10 +2,13 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+users.json
+*.pyc
+__pycache__/
+.env
 # C extensions
 *.so
-
+.env
 # Distribution / packaging
 .Python
 build/
@@ -25,7 +28,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-
+users.json
+companies/dlyog/users.json
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.

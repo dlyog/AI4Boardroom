@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLYog Lab | AI Bookkeeping Portal - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+        }
+        .phone {
+            width: 100%;
+            max-width: 500px;
+            height: 100vh;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow-y: auto;
+        }
+        @media (min-width: 600px) {
+            .phone {
+                height: 90vh;
+                margin: 5vh auto;
+                border-radius: 40px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+        }
+        .header {
+            text-align: center;
+            color: white;
+            padding: 20px 0 10px 0;
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            letter-spacing: 0.02em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        .header .icon {
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+        .header p {
+            font-size: 1rem;
+            opacity: 0.94;
+            margin-bottom: 0.5rem;
+        }
+        .header .tagline {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        .login-form {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 20px;
+            color: white;
+            margin: 20px;
+            box-shadow: 0 4px 16px 0 rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.97rem;
+            opacity: 0.96;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1rem;
+        }
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background: white;
+            color: #4f46e5;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .login-button:hover {
+            background: rgba(255, 255, 255, 0.92);
+        }
+        .error-message {
+            background: rgba(255, 0, 0, 0.13);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone">
+        <!-- Header -->
+        <div class="header">
+            <h1>
+                <span class="icon"><i class="fa-solid fa-robot"></i></span>
+                DLYog Lab
+            </h1>
+            <p>AI Bookkeeping & Compliance Portal</p>
+            <div class="tagline">Accelerate AI innovation. Simplify receipts, audits, and compliance.</div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form">
+            <div class="error-message" id="error-message"></div>
+            <form id="login-form" action="/" method="POST" autocomplete="off">
+                <div class="form-group">
+                    <label for="username"><i class="fa-solid fa-user"></i> Username</label>
+                    <input type="text" id="username" name="username" placeholder="Your DLYog username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" autocomplete="current-password" required>
+                </div>
+                <button type="submit" class="login-button">
+                    <i class="fa-solid fa-arrow-right-to-bracket mr-1"></i> Sign In
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            try {
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: formData.get('username'),
+                        password: formData.get('password')
+                    })
+                });
+
+                if (response.ok) {
+                    window.location.href = '/dashboard';
+                } else {
+                    const data = await response.json();
+                    const errorMessage = document.getElementById('error-message');
+                    errorMessage.textContent = data.message || 'Invalid credentials';
+                    errorMessage.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                const errorMessage = document.getElementById('error-message');
+                errorMessage.textContent = 'An error occurred. Please try again.';
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
