@@ -43,13 +43,12 @@ jobs:
     - name: Build Docker image
       run: |
         docker build \
-          --build-arg USERS_B64="$(cat users.b64)" \
           --build-arg GOOGLE_API_KEY="${{ secrets.GOOGLE_API_KEY }}" \
           -t "$IMAGE" .
 
     - name: Push Docker image to Artifact Registry
       run: docker push "$IMAGE"
-      
+
 
     - name: Deploy to Google Cloud Run
       run: |

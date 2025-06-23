@@ -26,6 +26,5 @@ EXPOSE 8080
 
 # Runtime secret injection
 CMD bash -c '\
-  echo "$USERS_B64" | base64 -d > /app/users.json && \
   echo "GOOGLE_API_KEY=$GOOGLE_API_KEY" > /app/.env && \
   python app_adk.py'
