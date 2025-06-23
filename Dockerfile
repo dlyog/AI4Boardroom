@@ -25,7 +25,7 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Declare build arguments for secrets
 ARG USERS_B64
 ARG GOOGLE_API_KEY
-
+EXPOSE 8080
 # Write secrets into the container file system
 RUN echo "$USERS_B64" | base64 -d > /app/users.json \
     && echo "GOOGLE_API_KEY=$GOOGLE_API_KEY" > /app/.env
