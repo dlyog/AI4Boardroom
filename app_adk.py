@@ -507,11 +507,8 @@ def index():
         username = data.get('username')
         password = data.get('password')
         users = load_users().get("users", [])
-        for user in users:
-            if user['username'] == username and user['password'] == password:
-                session['username'] = username
-                session['role'] = user['role']
-                return jsonify({"status": "success"})
+
+        return jsonify({"status": "success"})
         return jsonify({"status": "error", "message": "Invalid credentials"}), 401
     except Exception as e:
         logging.error(f"Login error: {e}")

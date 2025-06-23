@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Flow Diagram</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .connection-line {
+            stroke: #6366f1;
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 5,5;
+            animation: dash 2s linear infinite;
+        }
+        
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -10;
+            }
+        }
+        
+        .component-card {
+            transition: all 0.3s ease;
+        }
+        
+        .component-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .pulse-icon {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl font-bold text-white text-center mb-12">System Architecture Flow</h1>
+        
+        <div class="relative">
+            <!-- SVG for connection lines -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1200 800">
+                <!-- User to Web Container -->
+                <path class="connection-line" d="M 200 150 Q 300 100 400 150" />
+                
+                <!-- Web Container to Cloud Run -->
+                <path class="connection-line" d="M 500 200 Q 600 200 700 250" />
+                
+                <!-- Cloud Run to Database -->
+                <path class="connection-line" d="M 800 300 Q 900 350 1000 400" />
+                
+                <!-- Cloud Run to Gemini -->
+                <path class="connection-line" d="M 750 200 Q 750 100 750 50" />
+                
+                <!-- GitHub to Web Container -->
+                <path class="connection-line" d="M 300 500 Q 350 400 400 300" />
+            </svg>
+            
+            <!-- Components Grid -->
+            <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
+                
+                <!-- User -->
+                <div class="component-card bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-6 text-white shadow-lg">
+                    <div class="text-center">
+                        <i class="fas fa-user text-4xl mb-4 pulse-icon"></i>
+                        <h3 class="text-xl font-semibold mb-2">User</h3>
+                        <p class="text-blue-100 text-sm">End User Interface</p>
+                    </div>
+                </div>
+                
+                <!-- Web Container -->
+                <div class="component-card bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 text-white shadow-lg">
+                    <div class="text-center">
+                        <i class="fas fa-globe text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Web Container</h3>
+                        <p class="text-green-100 text-sm">Frontend Application</p>
+                    </div>
+                </div>
+                
+                <!-- Google Gemini LLM -->
+                <div class="component-card bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6 text-white shadow-lg md:col-start-2 lg:col-start-3">
+                    <div class="text-center">
+                        <i class="fas fa-brain text-4xl mb-4 pulse-icon"></i>
+                        <h3 class="text-xl font-semibold mb-2">Google Gemini</h3>
+                        <p class="text-purple-100 text-sm">LLM AI Service</p>
+                    </div>
+                </div>
+                
+                <!-- Cloud Run -->
+                <div class="component-card bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6 text-white shadow-lg md:col-start-2 lg:col-start-2">
+                    <div class="text-center">
+                        <i class="fas fa-cloud text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Cloud Run</h3>
+                        <p class="text-orange-100 text-sm">Serverless Platform</p>
+                    </div>
+                </div>
+                
+                <!-- Database -->
+                <div class="component-card bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 text-white shadow-lg md:col-start-3 lg:col-start-4">
+                    <div class="text-center">
+                        <i class="fas fa-database text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Database</h3>
+                        <p class="text-red-100 text-sm">Data Storage</p>
+                    </div>
+                </div>
+                
+                <!-- GitHub Actions -->
+                <div class="component-card bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl p-6 text-white shadow-lg md:col-start-1 lg:col-start-1 mt-8">
+                    <div class="text-center">
+                        <i class="fab fa-github text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">GitHub Actions</h3>
+                        <p class="text-gray-300 text-sm">CI/CD Pipeline</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Flow Indicators -->
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <i class="fas fa-arrow-right text-indigo-400 text-2xl mb-2"></i>
+                    <p class="text-white text-sm">User Request</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <i class="fas fa-cogs text-indigo-400 text-2xl mb-2"></i>
+                    <p class="text-white text-sm">Processing</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <i class="fas fa-bolt text-indigo-400 text-2xl mb-2"></i>
+                    <p class="text-white text-sm">AI Processing</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                    <i class="fas fa-check-circle text-indigo-400 text-2xl mb-2"></i>
+                    <p class="text-white text-sm">Data Storage</p>
+                </div>
+            </div>
+            
+            <!-- Architecture Description -->
+            <div class="mt-12 bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                <h2 class="text-2xl font-bold text-white mb-6 text-center">Architecture Overview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-white">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-300">Data Flow</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center"><i class="fas fa-arrow-right mr-2 text-indigo-400"></i>User interacts with Web Container</li>
+                            <li class="flex items-center"><i class="fas fa-arrow-right mr-2 text-indigo-400"></i>Web Container sends requests to Cloud Run</li>
+                            <li class="flex items-center"><i class="fas fa-arrow-right mr-2 text-indigo-400"></i>Cloud Run processes and stores data</li>
+                            <li class="flex items-center"><i class="fas fa-arrow-right mr-2 text-indigo-400"></i>AI processing via Google Gemini</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-3 text-indigo-300">Deployment</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-center"><i class="fas fa-arrow-right mr-2 text-indigo-400"></i>GitHub Actions handles CI/CD</li>
+                            <li class="flex items-center"><i class="fas fa-arrow-right mr-2 text-indigo-400"></i>Automated deployment to Cloud Run</li>
+                            <li class="flex items-center"><i class="fas fa-arrow-right mr-2 text-indigo-400"></i>Scalable serverless architecture</li>
+                            <li class="flex items-center"><i class="fas fa-arrow-right mr-2 text-indigo-400"></i>Integrated AI capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
