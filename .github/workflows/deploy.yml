@@ -57,5 +57,5 @@ jobs:
             --platform managed \
             --region "$REGION" \
             --allow-unauthenticated \
-            --set-env-vars GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
+            --set-env-vars GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }},USERS_JSON='${{ secrets.USERS_JSON }}'
 
