@@ -61,13 +61,22 @@ def load_users():
         if not raw:
             logging.warning("USERS_JSON env var is missing.")
             return {"users": []}
-        users = json.loads(raw)
+        
+        # First decode: from base64 to JSON string
+        decoded_json = base64.b64decode(raw).decode()
+
+        # Parse JSON
+        users = json.loads(decoded_json)
+
+        # Second decode: decode each user's password
         for user in users.get("users", []):
             user["password"] = base64.b64decode(user["password"]).decode()
+
         return users
     except Exception as e:
         logging.error(f"Failed to parse USERS_JSON: {e}")
         return {"users": []}
+
 
 
 
