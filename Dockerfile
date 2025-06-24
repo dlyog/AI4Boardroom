@@ -25,6 +25,5 @@ RUN pip install --upgrade pip && pip install -r requirements1.txt
 EXPOSE 8080
 
 # Runtime secret injection
-CMD bash -c '\
-  echo "GOOGLE_API_KEY=$GOOGLE_API_KEY" > /app/.env && \
-  python app_adk.py'
+CMD ["python", "app_adk.py"]
+

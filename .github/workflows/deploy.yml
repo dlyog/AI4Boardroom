@@ -52,8 +52,10 @@ jobs:
 
     - name: Deploy to Google Cloud Run
       run: |
-        gcloud run deploy "$SERVICE_NAME" \
-          --image "$IMAGE" \
-          --platform managed \
-          --region "$REGION" \
-          --allow-unauthenticated
+            gcloud run deploy "$SERVICE_NAME" \
+            --image "$IMAGE" \
+            --platform managed \
+            --region "$REGION" \
+            --allow-unauthenticated \
+            --set-env-vars GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}
+

@@ -25,6 +25,10 @@ from google.adk.sessions import InMemorySessionService
 # Load environment variables
 load_dotenv()
 
+import google.generativeai as genai
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+
+
 logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
